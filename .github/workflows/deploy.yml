@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, linux, x64, swarm-space]
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     steps:
