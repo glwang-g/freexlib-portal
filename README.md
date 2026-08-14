@@ -25,14 +25,16 @@ Freexlib 门户与跨项目契约仓库。这个仓库刻意保持很小：只�
 
 ## 部署
 
-推送 `master` 触发 GitHub Actions（self-hosted runner），把 `index.html` 安装到
-服务器 `/var/www/freexlib-portal` 并重载 nginx。首次搭建：
+推送 `master` 触发 GitHub Actions（GitHub-hosted runner），通过 SSH 把 `index.html`
+推送到服务器 `/var/www/freexlib-portal` 并重载 nginx。首次搭建：
 
 1. 创建 GitHub 仓库（建议 `glwang-g/freexlib-portal`）并推送本目录；
-2. 配置 self-hosted runner。可复用 swarm-space 的 runner 标签
-   `[self-hosted, linux, x64, swarm-space]`，或按服务器情况调整 workflow 的
-   `runs-on`；
-3. 确认服务器 nginx 把 `freexlib.com` 指向 `/var/www/freexlib-portal`
+2. 在仓库 `Settings → Secrets and variables → Actions` 配置 Variables
+   `DEPLOY_HOST`、`DEPLOY_USER`、`DEPLOY_PORT`、`DEPLOY_PATH`，以及 Secrets
+   `DEPLOY_SSH_KEY`、`DEPLOY_KNOWN_HOSTS`；
+3. 确保部署用户可以无密码执行 `sudo install`、`sudo nginx -t` 和
+   `sudo systemctl reload nginx`；
+4. 确认服务器 nginx 把 `freexlib.com` 指向 `/var/www/freexlib-portal`
    （片段见 `deploy/nginx/`）。
 
 ## 本地预览
