@@ -29,9 +29,9 @@ Freexlib 门户与跨项目契约仓库。这个仓库刻意保持很小：只�
 推送到服务器 `/var/www/freexlib-portal` 并重载 nginx。首次搭建：
 
 1. 创建 GitHub 仓库（建议 `glwang-g/freexlib-portal`）并推送本目录；
-2. 在仓库 `Settings → Secrets and variables → Actions` 配置 Variables
-   `DEPLOY_HOST`、`DEPLOY_USER`、`DEPLOY_PORT`、`DEPLOY_PATH`，以及 Secrets
-   `DEPLOY_SSH_KEY`、`DEPLOY_KNOWN_HOSTS`；
+2. 在仓库 `Settings → Secrets and variables → Actions → Secrets` 配置
+   `DEPLOY_HOST`、`DEPLOY_USER`、`DEPLOY_PORT`、`DEPLOY_PATH`、
+   `DEPLOY_SSH_KEY` 和 `DEPLOY_KNOWN_HOSTS`；
 3. 确保部署用户可以无密码执行 `sudo install`、`sudo nginx -t` 和
    `sudo systemctl reload nginx`；
 4. 确认服务器 nginx 把 `freexlib.com` 指向 `/var/www/freexlib-portal`
