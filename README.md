@@ -16,6 +16,7 @@ Freexlib 门户与跨项目契约仓库。这个仓库刻意保持很小：只�
 | Swarm Space | <https://swarm.freexlib.com> | Battlecode 风格的群智对抗，Rust 权威引擎样板 |
 | XShow Labs | <https://labs.freexlib.com> | 从信号到算法的计算机科学教育主线 |
 | Living World | <https://living.freexlib.com> | 可进入、可修改、可回看的持久方块世界 |
+| App Forge | <https://app.freexlib.com> | 聊天生成、验证并发布可安装小应用 |
 
 ## 世界契约
 
